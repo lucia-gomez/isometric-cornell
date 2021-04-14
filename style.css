@@ -1,0 +1,72 @@
+body {
+  /* variables defined in index.html script */
+  background-color: var(--bg);
+  color: var(--text);
+  transition: all 300ms ease-in-out;
+  display: flex;
+}
+
+#controls {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+#input-row {
+  display: flex;
+  flex-direction: row;
+}
+
+#isomer-canvas {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 576px) {
+  #isomer-canvas {
+    width: 100%;
+  }
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+  background-color: #a03c32;
+}
+
+.switch label .lever:after {
+  background-color: #792d26;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: #792d26;
+}
+
+.switch label .lever:before {
+  background-color: rgb(255 14 14 / 15%);
+}
+
+label {
+  color: var(--text);
+}
+
+input[type=range] {
+  border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  /* background-color: rgba(0,0,0,0.38); */
+  background-color: #792d26;
+}
+
+input[type=range]::-moz-range-thumb {
+  background-color: #792d26;
+}
+
+input[type=range]::-ms-thumb {
+  background-color: #792d26;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: rgba(0,0,0,0.38);
+}
+

@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href='./style.css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="./isomer.min.js"></script>
+  <script src="./themes.js"></script>
+</head>
+
+<body>
+  <div id="controls">
+    <div class="switch">
+      <label>
+        Lights
+        <input type="checkbox" onclick="toggle()" checked>
+        <span class="lever"></span>
+      </label>
+      <p class="range-field">
+        <label>
+          Gap
+          <input type="range" min="0" max="1" step="0.05" value="0.2" oninput="setGap(this.value)" />
+        </label>
+      </p>
+    </div>
+    <!-- <div id='input-row'>
+      <input type="checkbox" id="toggle" onclick="toggle()" checked>
+      <label for="toggle">Lights</label>
+    </div> -->
+  </div>
+
+  <canvas width="2100" height="1620" id="isomer-canvas"></canvas>
+  <script>
+    var themeName = "light";
+    document.documentElement.style.setProperty('--bg', themes[themeName].bg);
+    document.documentElement.style.setProperty('--text', themes[themeName].text);
+
+    function toggle() {
+      themeName = themeName === "light" ? "dark" : "light";
+      document.documentElement.style.setProperty('--bg', themes[themeName].bg);
+      document.documentElement.style.setProperty('--text', themes[themeName].text);
+    }
+
+    function setGap(val) {
+      gap = Number(val);
+    }
+  </script>
+  <script src="./mcgraw.js"></script>
+</body>
+
+</html>
