@@ -37,6 +37,10 @@ html, body {
   }
 }
 
+.switch label .lever {
+  margin: 5px 0px;;
+}
+
 .switch label input[type=checkbox]:checked+.lever {
   background-color: #a03c32;
 }
